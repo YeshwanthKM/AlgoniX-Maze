@@ -31,6 +31,17 @@ const finalHumanSteps = document.getElementById('finalHumanSteps');
 const resultComment = document.getElementById('resultComment');
 const playAgainBtn = document.getElementById('playAgainBtn');
 const reviewBoardBtn = document.getElementById('reviewBoardBtn');
+const homeScreen = document.getElementById('home-screen');
+const btnLaunchGame = document.getElementById('btn-launch-game');
+
+btnLaunchGame.addEventListener('click', () => {
+    homeScreen.style.opacity = '0';
+    setTimeout(() => {
+        homeScreen.style.display = 'none';
+        // Trigger initial generation
+        generateBtn.click();
+    }, 500);
+});
 
 class Cell {
     constructor(x, y) {
