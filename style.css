@@ -127,6 +127,8 @@ body {
     backdrop-filter: blur(10px);
     border: 1px solid var(--border-color);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2100; /* Above home screen (2000) and modals (100) */
 }
 
 .glow-text {
@@ -136,6 +138,7 @@ body {
     letter-spacing: 4px;
     background: linear-gradient(90deg, var(--accent-ai), var(--accent-human));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.1);
     margin-bottom: 0.5rem;
@@ -423,6 +426,7 @@ kbd {
     margin-bottom: 20px;
     background: linear-gradient(90deg, #fff, #aaa);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 

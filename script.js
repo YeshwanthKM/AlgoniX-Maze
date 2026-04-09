@@ -45,15 +45,20 @@ btnLaunchGame.addEventListener('click', () => {
 });
 
 exitBtn.addEventListener('click', () => {
+    console.log("Exit button clicked - returning to dashboard");
     // Reset state & stop animations
     isRaceActive = false;
     clearTimeout(aiAnimationId);
     
     // Show home screen
-    homeScreen.style.display = 'flex';
-    setTimeout(() => {
-        homeScreen.style.opacity = '1';
-    }, 10);
+    if (homeScreen) {
+        homeScreen.style.display = 'flex';
+        setTimeout(() => {
+            homeScreen.style.opacity = '1';
+        }, 10);
+    } else {
+        console.error("Home screen element not found!");
+    }
 });
 
 class Cell {
